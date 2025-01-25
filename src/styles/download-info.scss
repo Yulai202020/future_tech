@@ -1,0 +1,30 @@
+@use './vars.scss' as *;
+
+.download-info {
+    display: inline-grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    column-gap: rem(50);
+
+    .download-info-body {
+        .download-info-title {
+        }
+        .dowload-info-subtitle {
+        }
+    }
+
+    .download-info-team {
+        --size: #{rem(50)};
+
+        background-color: $dark;
+        border-radius: rem(12);
+
+        @include laptop {
+            --size: #{rem(40)};
+        }
+    }
+
+    @include laptop {
+        column-gap: rem(30);
+    }
+}

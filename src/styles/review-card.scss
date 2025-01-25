@@ -1,0 +1,38 @@
+@use './vars.scss' as *;
+
+.review-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: rem(40);
+    max-width: rem(500);
+    margin-inline: auto;
+
+    .review-card-author {
+        --imageSize: #{rem(60)};
+
+        @include laptop {
+        }
+    }
+
+    .review-card-body {
+        position: relative;
+        padding: fluid(30, 20);
+        padding-top: fluid(50, 30);
+        color: $white;
+        text-align: center;
+
+        .review-card-rating-view {
+            @include abs-center;
+
+            top: 0;
+        }
+
+        .review-card-description {
+        }
+    }
+
+    @include laptop {
+        row-gap: rem(30);
+    }
+}

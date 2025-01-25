@@ -1,0 +1,141 @@
+@use './vars.scss' as *;
+
+.hero {
+    .hero-main {
+        .hero-body {
+            grid-area: body;
+            padding-top: rem(150);
+            padding-right: rem(50);
+            padding-bottom: rem(100);
+
+            .hero-subtitle {
+                @include fluid-text(30, 18);
+
+                font-family: $font-accent;
+                font-weight: 500;
+                color: $dark-40;
+
+                &:not(:last-child) {
+                    margin-bottom: rem(30);
+
+                    @include mobile {
+                        margin-bottom: rem(14);
+                    }
+                }
+            }
+
+            .hero-title {
+                &:not(:last-child) {
+                    margin-bottom: rem(20);
+
+                    @include mobile {
+                        margin-bottom: rem(10);
+                    }
+                }
+            }
+
+            .hero-description {
+            }
+
+            @include laptop {
+                padding-top: rem(100);
+                padding-right: rem(40);
+            }
+
+            @include tablet {
+                padding-right: 0;
+                padding-top: rem(40);
+                padding-bottom: rem(30);
+            }
+        }
+
+        .hero-metrics {
+            grid-area: metrics;
+
+            @include tablet-above {
+                border-top: $border;
+            }
+
+            @include tablet {
+                &::before {
+                    width: 100vw;
+                    right: calc($container-padding-x * -1);
+                }
+            }
+        }
+
+        .hero-resources-preview {
+            grid-area: resources-preview;
+            padding-left: rem(80);
+            padding-bottom: rem(80);
+            background: url('./images/resources-preview/bg.png') 0 0 / cover
+                no-repeat;
+
+            @include laptop {
+                padding-left: rem(50);
+                padding-bottom: rem(50);
+            }
+
+            @include tablet-above {
+                border-left: $border;
+            }
+
+            @include tablet {
+                width: 100vw;
+                margin-left: calc($container-padding-x * -1);
+                padding: rem(100) rem(40) rem(40);
+                background-image: url('./images/resources-preview/bg_tablet.png');
+                background-size: contain;
+            }
+        }
+
+        @include tablet-above {
+            display: grid;
+            grid-template-columns: 60% auto;
+            grid-template-areas:
+                'body resources-preview'
+                'metrics resources-preview';
+        }
+    }
+
+    .hero-advantages {
+        border-block: $border;
+
+        .hero-advantages-list {
+            .hero-advantages-item {
+                --paddingX: #{rem(80)};
+
+                padding-block: rem(50);
+
+                @include laptop {
+                    --paddingX: #{rem(50)};
+                    padding-block: rem(40);
+                }
+
+                @include tablet-above {
+                    &:not(:first-child) {
+                        padding-left: var(--paddingX);
+                    }
+
+                    &:not(:last-child) {
+                        padding-right: var(--paddingX);
+                        border-right: $border;
+                    }
+                }
+
+                @include tablet {
+                    padding-block: rem(30);
+
+                    &:not(:last-child) {
+                        border-bottom: $border;
+                    }
+                }
+            }
+
+            @include tablet-above {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    }
+}

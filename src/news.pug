@@ -1,0 +1,326 @@
+doctype html
+html(lang='en')
+    head
+        title Future Tech | News
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="style.scss")
+        script(src="scripts/main.js", type="module")
+    body
+        header.header(header)
+            div.header-promo
+                div.header-promo-inner.container
+                    a.header-promo-link(href="/")
+                        span.icon.icon-yellow-arrow Subscribe to our Newsletter For New & latest Blogs and Resources
+            div.header-body
+                div.header-body-inner.container
+                    a.header-logo.logo(href="/", title="Home", aria-label="Home")
+                        img.logo-image(src="./images/logo.svg", alt="", width="179", height="50")
+                    div.header-overlay(header-overlay)
+                        nav.header-menu
+                            ul.header-menu-list
+                                li.header-menu-item
+                                    a.header-menu-link(href="./index.pug") Home
+                                li.header-menu-item
+                                    a.header-menu-link.is-active(href="./news.pug") News
+                                li.header-menu-item
+                                    a.header-menu-link(href="./podcasts.pug") Podcasts
+                                li.header-menu-item
+                                    a.header-menu-link(href="./resources.pug") Resources
+                        a.header-contact-us-link.button.button-yellow.hidden-mobile(href="/") Contact Us
+                    button.header-burger-button.burger-button.visible-mobile(type="button", aria-label="Open menu", title="Open menu", header-burger-button)
+                        span.burger-button-line
+                        span.burger-button-line
+                        span.burger-button-line
+        main.content
+            section.hero-alt(aria-labelledby="news-title")
+                div.hero-alt-header
+                    div.hero-alt-header-inner.container
+                        h1.hero-alt-title(id="news-title")
+                            | Today's Headlines: Stay
+                            span.hero-alt-title-hidden-part Informed
+                        p.hero-alt-subtitle.h1.hidden-mobile(aria-hidden="true") Informed
+                        p.hero-alt-desciption Explore the latest news from around the world. We bring you up-to-the-minute updates on the most significant events, trends, and stories. Discover the world through our news coverage.
+                div.hero-alt-body
+                    ul.list
+                        li.list-item
+                            acticle.news-card.container
+                                img.news-card-image(src="./images/news/1.jpg", alt="", width="515", height="427")
+                                div.news-card-body
+                                    h2.news-card-title Global Climate Summit Addresses Urgent Climate Action
+                                    div.news-card-desciption
+                                        p World leaders gathered at the Global Climate Summit to discuss urgent climate action, emissions reductions, and renewable energy targets.
+                                div.news-card-summary.summary
+                                    dl.summary-list
+                                        div.summary-item
+                                            dt.summary-key Category
+                                            dd.summary-value Environment
+                                        div.summary-item
+                                            dt.summary-key Publication Date
+                                            dd.summary-value
+                                                time(datetime="2023-10-10") October 10, 2023
+                                        div.summary-item
+                                            dt.summary-key Author
+                                            dd.summary-value Jane Smith
+                                div.news-card-controls
+                                    div.news-card-actions.blog-actions
+                                        ul.blog-actions-list
+                                            li.blog-actions-item
+                                                button.blog-actions-button(type="button", aria-label="like", title="like")
+                                                    span.blog-actions-icon-wrapper
+                                                        include images/icons/like.svg
+                                                    span 14k
+                                            li.blog-actions-item
+                                                button.blog-actions-button(type="button", aria-label="share", title="dislike")
+                                                    span.blog-actions-icon-wrapper
+                                                        include images/icons/share.svg
+                                                    span 204
+                                    a.new-card-link.button(href="/") Read More
+                        li.list-item
+                            div.news.container
+                                ul.news-list
+                                    li.news-item
+                                        acticle.news-card.container
+                                            img.news-card-image(src="./images/news/2.jpg", alt="", width="512", height="222")
+                                            div.news-card-body
+                                                h2.news-card-title.h6 A Decisive Victory for Progressive Policies
+                                                div.news-card-desciption
+                                                    p Politics
+                                            div.news-card-controls
+                                                div.news-card-actions.blog-actions
+                                                    ul.blog-actions-list
+                                                        li.blog-actions-item
+                                                            button.blog-actions-button(type="button", aria-label="like", title="like")
+                                                                span.blog-actions-icon-wrapper
+                                                                    include images/icons/like.svg
+                                                                span 2.2k
+                                                        li.blog-actions-item
+                                                            button.blog-actions-button(type="button", aria-label="share", title="dislike")
+                                                                span.blog-actions-icon-wrapper
+                                                                    include images/icons/share.svg
+                                                                span 60
+                                                a.new-card-link.button(href="/")
+                                                    span.icon.icon-yellow-arrow Read More
+                                    li.news-item
+                                        acticle.news-card.container
+                                            img.news-card-image(src="./images/news/3.jpg", alt="", width="512", height="222")
+                                            div.news-card-body
+                                                h2.news-card-title.h6 Tech Giants Unveil Cutting-Edge AI Innovations
+                                                div.news-card-desciption
+                                                    p Technology
+                                            div.news-card-controls
+                                                div.news-card-actions.blog-actions
+                                                    ul.blog-actions-list
+                                                        li.blog-actions-item
+                                                            button.blog-actions-button(type="button", aria-label="like", title="like")
+                                                                span.blog-actions-icon-wrapper
+                                                                    include images/icons/like.svg
+                                                                span 6k
+                                                        li.blog-actions-item
+                                                            button.blog-actions-button(type="button", aria-label="share", title="dislike")
+                                                                span.blog-actions-icon-wrapper
+                                                                    include images/icons/share.svg
+                                                                span 92
+                                                a.new-card-link.button(href="/")
+                                                    span.icon.icon-yellow-arrow Read More
+                                    li.news-item
+                                        acticle.news-card.container
+                                            img.news-card-image(src="./images/news/4.jpg", alt="", width="512", height="222")
+                                            div.news-card-body
+                                                h2.news-card-title.h6 COVID-19 Variants
+                                                div.news-card-desciption
+                                                    p Health
+                                            div.news-card-controls
+                                                div.news-card-actions.blog-actions
+                                                    ul.blog-actions-list
+                                                        li.blog-actions-item
+                                                            button.blog-actions-button(type="button", aria-label="like", title="like")
+                                                                span.blog-actions-icon-wrapper
+                                                                    include images/icons/like.svg
+                                                                span 10k
+                                                        li.blog-actions-item
+                                                            button.blog-actions-button(type="button", aria-label="share", title="dislike")
+                                                                span.blog-actions-icon-wrapper
+                                                                    include images/icons/share.svg
+                                                                span 124
+                                                a.new-card-link.button(href="/")
+                                                    span.icon.icon-yellow-arrow Read More
+            section.section(aria-labelledby="blog-title")
+                header.section-header
+                    div.section-header-inner.container
+                        div.section-header-info
+                            p.section-subtitle.tag A Knowledge Treasure Trove
+                            h2.section-title(id="blog-title") Explore FutureTech's In-Depth Blog Posts
+                        a.section-link.button(href="/")
+                            span.icon.icon-yellow-arrow View All Blogs
+                div.section-body.tabs(tabs)
+                    h3.visually-hidden(id="blog-category-title") Blog category
+                    header.tabs-header
+                        div.tabs-buttons.container(role="tablist", aria-labelledby="blog-category-title")
+                            button.tabs-button(id="tab-1", type="button", role="tab", aria-selected="true", tabs-button) All
+                            button.tabs-button(id="tab-1", type="button", role="tab", aria-selected="false", tabindex="-1", tabs-button) Quantum Computing
+                            button.tabs-button(id="tab-1", type="button", role="tab", aria-selected="false", tabindex="-1", tabs-button) AI Ethics
+                            button.tabs-button(id="tab-1", type="button", role="tab", aria-selected="false", tabindex="-1", tabs-button) Space Exploration
+                            button.tabs-button(id="tab-1", type="button", role="tab", aria-selected="false", tabindex="-1", tabs-button) Biotechnology
+                            button.tabs-button(id="tab-1", type="button", role="tab", aria-selected="false", tabindex="-1", tabs-button) Renewable Energy
+                    div.tabs-body
+                        div.tabs-content.is-active(id="tabpanel-1", aria-labelledby="tab-1", tabindex="0", tabs-content)
+                            ul.list
+                                li.list-item
+                                    article.blog-card.container
+                                        div.blog-card-author.person-card
+                                            img.person-card-image(src="./images/team/2.png", alt="", width="80", height="80")
+                                            div.person-card-body
+                                                p.person-card-name John Techson
+                                                p.person-card-department Quantum Computing
+                                        div.blog-card-body
+                                            time.blog-card-date.h6(datetime="2023-10-15") October 15, 2023
+                                            div.blog-card-info
+                                                h4.blog-card-title The Quantum Leap in Computing
+                                                div.blog-card-description
+                                                    p Explore the revolution in quantum computing, its applications, and its potential impact on various industries.
+                                            div.blog-card-actions.blog-actions
+                                                ul.blog-actions-list
+                                                    li.blog-actions-item
+                                                        button.blog-actions-button.is-active(type="button", aria-label="dislike", title="dislike")
+                                                            span.blog-actions-icon-wrapper
+                                                                include ./images/icons/like.svg
+                                                            span 24.5k
+                                                    li.blog-actions-item
+                                                        button.blog-actions-button(type="button", aria-label="discuss", title="dislike")
+                                                            span.blog-actions-icon-wrapper
+                                                                include images/icons/discuss.svg
+                                                            span 50
+                                                    li.blog-actions-item
+                                                        button.blog-actions-button(type="button", aria-label="share", title="dislike")
+                                                            span.blog-actions-icon-wrapper
+                                                                include images/icons/share.svg
+                                                            span 20
+                                        a.blog-card-link.button(href="/")
+                                            span.icon.icon-yellow-arrow View Blog
+                                li.list-item
+                                    article.blog-card.container
+                                        div.blog-card-author.person-card
+                                            img.person-card-image(src="./images/team/3.png", alt="", width="80", height="80")
+                                            div.person-card-body
+                                                p.person-card-name Sarah Ethicist
+                                                p.person-card-department AI Ethics
+                                        div.blog-card-body
+                                            time.blog-card-date(datetime="2023-10-15") November 5, 2023
+                                            div.blog-card-info
+                                                h4.blog-card-title The Ethical Dilemmas of AI
+                                                div.blog-card-description
+                                                    p A deep dive into ethical challenges posed by AI, including bias, privacy, and transparency.
+                                            div.blog-card-actions.blog-actions
+                                                ul.blog-actions-list
+                                                    li.blog-actions-item
+                                                        button.blog-actions-button(type="button", aria-label="dislike", title="dislike")
+                                                            span.blog-actions-icon-wrapper
+                                                                include images/icons/like.svg
+                                                            span 32k
+                                                    li.blog-actions-item
+                                                        button.blog-actions-button(type="button", aria-label="discuss", title="dislike")
+                                                            span.blog-actions-icon-wrapper
+                                                                include images/icons/discuss.svg
+                                                            span 72
+                                                    li.blog-actions-item
+                                                        button.blog-actions-button(type="button", aria-label="share", title="dislike")
+                                                            span.blog-actions-icon-wrapper
+                                                                include images/icons/share.svg
+                                                            span 18
+                                        a.blog-card-link.button(href="/")
+                                            span.icon.icon-yellow-arrow View Blog
+                                li.list-item
+                                    article.blog-card.container
+                                        div.blog-card-author.person-card
+                                            img.person-card-image(src="./images/team/4.png", alt="", width="80", height="80")
+                                            div.person-card-body
+                                                p.person-card-name Astronomer X
+                                                p.person-card-department Space Exploration
+                                        div.blog-card-body
+                                            time.blog-card-date(datetime="2023-10-15") December 10, 2023
+                                            div.blog-card-info
+                                                h4.blog-card-title The Mars Colonization Challenge
+                                                div.blog-card-description
+                                                    p Exploring the technical and logistical challenges of human colonization on Mars.
+                                            div.blog-card-actions.blog-actions
+                                                ul.blog-actions-list
+                                                    li.blog-actions-item
+                                                        button.blog-actions-button(type="button", aria-label="dislike", title="dislike")
+                                                            span.blog-actions-icon-wrapper
+                                                                include images/icons/like.svg
+                                                            span 20k
+                                                    li.blog-actions-item
+                                                        button.blog-actions-button(type="button", aria-label="discuss", title="dislike")
+                                                            span.blog-actions-icon-wrapper
+                                                                include images/icons/discuss.svg
+                                                            span 31
+                                                    li.blog-actions-item
+                                                        button.blog-actions-button(type="button", aria-label="share", title="dislike")
+                                                            span.blog-actions-icon-wrapper
+                                                                include images/icons/share.svg
+                                                            span 12
+                                        a.blog-card-link.button(href="/")
+                                            span.icon.icon-yellow-arrow View Blog
+            section.section(aria-labelledby="reviews-title")
+                header.section-header
+                    div.section-header-inner.container
+                        div.section-header-info
+                            p.section-subtitle.tag What Our Readers Say
+                            h2.section-title(id="reviews-title") Real Words from Real Readers
+                        a.section-link.button(href="") 
+                            span.icon.icon-yellow-arrow 
+                div.section-body
+                    ul.bordered-grid.grid-2.container
+                        li.bordered-grid-item
+                            div.video-card
+                                div.video-card-player.video-player(video-player)
+                                    video.video-player-video(src="./videos/1.webm", width="718", height="412", poster="./images/videos/poster-1.jpg", video-player-video)
+                                    div.video-player-pannel.is-active(video-player-panel)
+                                        button.video-player-play-button(type="button", aria-label="Play video", title="Play video", video-player-play-button)
+                                            include images/icons/play-button.svg
+                                        div.video-player-duration 2.30min
+                                div.video-card-body
+                                    h3.video-card-title.h5 Mars Exploration: Unveiling Alien Landscapes
+                                    div.video-card-description
+                                        p Embark on a journey through the Red Planet's breathtaking landscapes and uncover the mysteries of Mars.
+                        li.bordered-grid-item
+                            div.video-card
+                                div.video-card-player.video-player(video-player)
+                                    video.video-player-video(src="./videos/1.webm", width="718", height="412", poster="./images/videos/poster-1.jpg", video-player-video)
+                                    div.video-player-pannel.is-active(video-player-panel)
+                                        button.video-player-play-button(type="button", aria-label="Play video", title="Play video", video-player-play-button)
+                                            include images/icons/play-button.svg
+                                        div.video-player-duration 2.30min
+                                div.video-card-body
+                                   h3.video-card-title.h5 Blockchain Explained: A Revolution in Finance
+                                    div.video-card-description
+                                        p Delve into the world of blockchain technology and its transformative impact on the financial industry.
+                        li.bordered-grid-item
+                            div.video-card
+                                div.video-card-player.video-player(video-player)
+                                    video.video-player-video(src="./videos/1.webm", width="718", height="412", poster="./images/videos/poster-1.jpg", video-player-video)
+                                    div.video-player-pannel.is-active(video-player-panel)
+                                        button.video-player-play-button(type="button", aria-label="Play video", title="Play video", video-player-play-button)
+                                            include images/icons/play-button.svg
+                                        div.video-player-duration 2.30min
+                                div.video-card-body
+                                    h3.video-card-title.h5 Breaking the Silence: Mental Health Awareness in the Workplace
+                                    div.video-card-description
+                                        p An exploration of the importance of mental health awareness and the initiatives reshaping workplaces for employee well-being.
+                        li.bordered-grid-item
+                            div.video-card
+                                div.video-card-player.video-player(video-player)
+                                    video.video-player-video(src="./videos/1.webm", width="718", height="412", poster="./images/videos/poster-1.jpg", video-player-video)
+                                    div.video-player-pannel.is-active(video-player-panel)
+                                        button.video-player-play-button(type="button", aria-label="Play video", title="Play video", video-player-play-button)
+                                            include images/icons/play-button.svg
+                                        div.video-player-duration 2.30min
+                                div.video-card-body
+                                    h3.video-card-title.h5 Revolutionizing Investment Strategies
+                                    div.video-card-description
+                                        p An in-depth look at global efforts to conserve biodiversity and safeguard endangered species from extinction.
+
+            include includes/index/about.pug
+
+        include includes/index/footer.pug

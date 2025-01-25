@@ -1,0 +1,196 @@
+@use './vars.scss' as *;
+
+.section {
+    .section-header {
+        padding-block: fluid(120, 40);
+        background-color: $dark-10;
+
+        .section-header-inner {
+            &:has(.section-link) {
+                display: grid;
+                align-items: center;
+                column-gap: 1rem;
+
+                @include mobile-above {
+                    grid-template-columns: 1fr auto;
+                }
+
+                @include mobile {
+                    row-gap: rem(30);
+                }
+            }
+
+            .card-preview-icon {
+            }
+
+            .section-header-info {
+                display: grid;
+                align-items: start;
+                row-gap: rem(16);
+
+                .section-subtitle {
+                    justify-self: start;
+                }
+
+                .section-title {
+                }
+
+                @include laptop {
+                    row-gap: rem(10);
+                }
+            }
+        }
+    }
+
+    .section-body {
+        border-block: $border;
+    }
+}
+
+.list {
+    .list-item {
+        &:not(:last-child) {
+            border-bottom: $border;
+        }
+
+        .card {
+            display: grid;
+            grid-template-columns: 37.5% auto;
+
+            .card-preview {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: rem(80);
+                padding-left: 0;
+                border-right: $border;
+                row-gap: fluid(60, 20);
+
+                .card-preview-main {
+                    display: grid;
+                    row-gap: fluid(50, 20);
+
+                    .card-preview-icon {
+                        width: fluid(80, 50);
+                    }
+
+                    .card-preview-info {
+                        display: grid;
+                        row-gap: fluid(16, 6);
+
+                        .card-preview-title {
+                        }
+
+                        .card-preview-description {
+                        }
+                    }
+                }
+
+                @include laptop {
+                    padding: rem(60);
+                }
+
+                @include tablet {
+                    padding-right: 0;
+                    padding-block: rem(50);
+                    border-bottom: $border;
+                }
+            }
+
+            //- div.card-preview-extra
+            .card-body {
+                padding: rem(80);
+                padding-right: 0;
+
+                .card-grid {
+                    display: grid;
+
+                    .card-cell {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: start;
+                        row-gap: fluid(20, 4);
+
+                        .card-cell-title {
+                        }
+
+                        .card-cell-description {
+                        }
+
+                        .card-cell-image {
+                            width: 100%;
+                            height: fluid(332, 169);
+                            object-fit: cover;
+                            border-radius: rem(12);
+
+                            @include laptop {
+                                border-radius: rem(10);
+                            }
+                        }
+
+                        &.wide {
+                            grid-column: -1 / 1;
+                        }
+
+                        &:has(> *:only-child) {
+                            justify-content: center;
+                        }
+
+                        &:has(.card-cell-link) {
+                            display: grid;
+                            grid-template-columns: 1fr auto;
+                            grid-template-areas: 'other link' 'other link';
+                            column-gap: rem(20);
+                            align-items: center;
+                        }
+
+                        .card-cell-link {
+                            grid-area: link;
+                        }
+                    }
+
+                    &.grid-2 {
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: fluid(30, 10);
+
+                        @include mobile {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+
+                    &.grid-2-alt {
+                        gap: rem(30) rem(20);
+
+                        @include mobile-above {
+                            grid-template-columns: 1fr auto;
+                        }
+
+                        @include laptop {
+                            gap: rem(24) rem(16);
+                        }
+                    }
+
+                    &.grid-3 {
+                        gap: fluid(50, 20) rem(20);
+
+                        @include laptop {
+                            column-gap: rem(16);
+                        }
+
+                        @include mobile-above {
+                            grid-template-columns: repeat(3, 1fr);
+                        }
+                    }
+                }
+
+                @include laptop {
+                    padding: rem(60);
+                }
+
+                @include tablet {
+                    padding: rem(30) 0;
+                }
+            }
+        }
+    }
+}

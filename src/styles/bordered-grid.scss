@@ -1,0 +1,85 @@
+@use './vars.scss' as *;
+
+.bordered-grid {
+    --columns: 1;
+    --itemPadddingY: #{fluid(80, 40)};
+
+    display: grid;
+    grid-template-columns: repeat(var(--columns), 1fr);
+
+    &.grid-2 {
+        --columns: 2;
+        --itemPadddingX: #{rem(80)};
+
+        @include mobile-above {
+            .bordered-grid-item {
+                &:nth-child(odd) {
+                    padding-right: var(--itemPadddingX);
+                    border-right: $border;
+                }
+
+                &:nth-child(even) {
+                    @include full-vw-centered-line(bottom, auto, 100%, 50%);
+
+                    padding-left: var(--itemPadddingX);
+                }
+            }
+        }
+
+        @include laptop {
+            --itemPadddingX: #{rem(50)};
+        }
+
+        @include mobile {
+            --columns: 1;
+
+            .bordered-grid-item:not(:last-child) {
+                border-bottom: $border;
+            }
+        }
+    }
+
+    &.grid-3 {
+        --columns: 3;
+        --itemPadddingX: #{rem(50)};
+
+        column-gap: calc(var(--itemPadddingX) * 2);
+
+        @include laptop {
+            --itemPadddingX: #{rem(40)};
+        }
+
+        @include tablet-above {
+            .bordered-grid-item {
+                &:nth-child(3n - 1),
+                &:nth-child(3n - 2) {
+                    // padding-right: var(--itemPadddingX);
+                    // border-right: $border;
+                }
+
+                &:nth-child(3n - 1) {
+                    @include full-vw-centered-line(bottom);
+                }
+
+                &:nth-child(3n - 1),
+                &:nth-child(3n) {
+                    // padding-left: var(--itemPadddingX);
+                }
+            }
+        }
+
+        @include tablet {
+            --columns: 1;
+
+            .bordered-grid-item {
+                &:not(:last-child) {
+                    border-bottom: $border;
+                }
+            }
+        }
+    }
+
+    .bordered-grid-item {
+        padding-block: var(--itemPadddingY);
+    }
+}

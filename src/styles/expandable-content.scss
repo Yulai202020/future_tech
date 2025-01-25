@@ -1,0 +1,39 @@
+.expandable-content {
+    --initMaxHeight: #{rem(500)};
+
+    position: relative;
+    overflow-y: hidden;
+
+    &.is-expanded,
+    .expandable-content-button {
+        &::before {
+            @include hide;
+        }
+    }
+
+    &:not(&.is-expanded) {
+        max-height: var(--initMaxHeight);
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 30%;
+        background-image: linear-gradient(
+            180deg,
+            rgba(20, 20, 20, 0) 0%,
+            $dark 77.38%
+        );
+
+        pointer-events: none;
+        transition-duration: $transition-duration;
+    }
+
+    .expandable-content-button {
+        @include abs-x;
+        bottom: rem(68);
+    }
+}

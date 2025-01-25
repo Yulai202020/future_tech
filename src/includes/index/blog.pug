@@ -1,0 +1,117 @@
+section.section(aria-labelledby="blog-title")
+    header.section-header
+        div.section-header-inner.container
+            div.section-header-info
+                p.section-subtitle.tag A Knowledge Treasure Trove
+                h2.section-title(id="blog-title") Explore FutureTech's In-Depth Blog Posts
+            a.section-link.button(href="./blog.pug")
+                span.icon.icon-yellow-arrow View All Blogs
+    div.section-body.tabs(tabs)
+        h3.visually-hidden(id="blog-category-title") Blog category
+        header.tabs-header
+            div.tabs-buttons.container(role="tablist", aria-labelledby="blog-category-title")
+                button.tabs-button(id="tab-1", type="button", role="tab", aria-selected="true", tabs-button) All
+                button.tabs-button(id="tab-1", type="button", role="tab", aria-selected="false", tabindex="-1", tabs-button) Quantum Computing
+                button.tabs-button(id="tab-1", type="button", role="tab", aria-selected="false", tabindex="-1", tabs-button) AI Ethics
+                button.tabs-button(id="tab-1", type="button", role="tab", aria-selected="false", tabindex="-1", tabs-button) Space Exploration
+                button.tabs-button(id="tab-1", type="button", role="tab", aria-selected="false", tabindex="-1", tabs-button) Biotechnology
+                button.tabs-button(id="tab-1", type="button", role="tab", aria-selected="false", tabindex="-1", tabs-button) Renewable Energy
+        div.tabs-body
+            div.tabs-content.is-active(id="tabpanel-1", aria-labelledby="tab-1", tabindex="0", tabs-content)
+                ul.list
+                    li.list-item
+                        article.blog-card.container
+                            div.blog-card-author.person-card
+                                img.person-card-image(src="./images/team/2.png", alt="", width="80", height="80")
+                                div.person-card-body
+                                    p.person-card-name John Techson
+                                    p.person-card-department Quantum Computing
+                            div.blog-card-body
+                                time.blog-card-date.h6(datetime="2023-10-15") October 15, 2023
+                                div.blog-card-info
+                                    h4.blog-card-title The Quantum Leap in Computing
+                                    div.blog-card-description
+                                        p Explore the revolution in quantum computing, its applications, and its potential impact on various industries.
+                                div.blog-card-actions.blog-actions
+                                    ul.blog-actions-list
+                                        li.blog-actions-item
+                                            button.blog-actions-button.is-active(type="button", aria-label="dislike", title="dislike")
+                                                span.blog-actions-icon-wrapper
+                                                    include /images/icons/like.svg
+                                                span 24.5k
+                                        li.blog-actions-item
+                                            button.blog-actions-button(type="button", aria-label="discuss", title="dislike")
+                                                span.blog-actions-icon-wrapper
+                                                    include /images/icons/discuss.svg
+                                                span 50
+                                        li.blog-actions-item
+                                            button.blog-actions-button(type="button", aria-label="share", title="dislike")
+                                                span.blog-actions-icon-wrapper
+                                                    include /images/icons/share.svg
+                                                span 20
+                            a.blog-card-link.button(href="./blog.pug")
+                                span.icon.icon-yellow-arrow View Blog
+                    li.list-item
+                        article.blog-card.container
+                            div.blog-card-author.person-card
+                                img.person-card-image(src="./images/team/3.png", alt="", width="80", height="80")
+                                div.person-card-body
+                                    p.person-card-name Sarah Ethicist
+                                    p.person-card-department AI Ethics
+                            div.blog-card-body
+                                time.blog-card-date(datetime="2023-10-15") November 5, 2023
+                                div.blog-card-info
+                                    h4.blog-card-title The Ethical Dilemmas of AI
+                                    div.blog-card-description
+                                        p A deep dive into ethical challenges posed by AI, including bias, privacy, and transparency.
+                                div.blog-card-actions.blog-actions
+                                    ul.blog-actions-list
+                                        li.blog-actions-item
+                                            button.blog-actions-button(type="button", aria-label="dislike", title="dislike")
+                                                span.blog-actions-icon-wrapper
+                                                    include /images/icons/like.svg
+                                                span 32k
+                                        li.blog-actions-item
+                                            button.blog-actions-button(type="button", aria-label="discuss", title="dislike")
+                                                span.blog-actions-icon-wrapper
+                                                    include /images/icons/discuss.svg
+                                                span 72
+                                        li.blog-actions-item
+                                            button.blog-actions-button(type="button", aria-label="share", title="dislike")
+                                                span.blog-actions-icon-wrapper
+                                                    include /images/icons/share.svg
+                                                span 18
+                            a.blog-card-link.button(href="./blog.pug")
+                                span.icon.icon-yellow-arrow View Blog
+                    li.list-item
+                        article.blog-card.container
+                            div.blog-card-author.person-card
+                                img.person-card-image(src="./images/team/4.png", alt="", width="80", height="80")
+                                div.person-card-body
+                                    p.person-card-name Astronomer X
+                                    p.person-card-department Space Exploration
+                            div.blog-card-body
+                                time.blog-card-date(datetime="2023-10-15") December 10, 2023
+                                div.blog-card-info
+                                    h4.blog-card-title The Mars Colonization Challenge
+                                    div.blog-card-description
+                                        p Exploring the technical and logistical challenges of human colonization on Mars.
+                                div.blog-card-actions.blog-actions
+                                    ul.blog-actions-list
+                                        li.blog-actions-item
+                                            button.blog-actions-button(type="button", aria-label="dislike", title="dislike")
+                                                span.blog-actions-icon-wrapper
+                                                    include /images/icons/like.svg
+                                                span 20k
+                                        li.blog-actions-item
+                                            button.blog-actions-button(type="button", aria-label="discuss", title="dislike")
+                                                span.blog-actions-icon-wrapper
+                                                    include /images/icons/discuss.svg
+                                                span 31
+                                        li.blog-actions-item
+                                            button.blog-actions-button(type="button", aria-label="share", title="dislike")
+                                                span.blog-actions-icon-wrapper
+                                                    include /images/icons/share.svg
+                                                span 12
+                            a.blog-card-link.button(href="./blog.pug")
+                                span.icon.icon-yellow-arrow View Blog

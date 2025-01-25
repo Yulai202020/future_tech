@@ -1,0 +1,226 @@
+@use 'sass:math';
+
+@function rem($px) {
+    @if math.is-unitless($px) {
+        @return math.div($px, 16) + rem;
+    } @else {
+        @error "Input number without unit!";
+    }
+}
+
+$white: #ffffff;
+$black: #000000;
+$dark: #141414;
+$dark-10: #1a1a1a;
+$dark-15: #262626;
+$dark-20: #333333;
+$dark-40: #666666;
+
+$grey-50: #7e7e81;
+$grey-60: #98989a;
+
+$yellow: #ffd11a;
+
+$red: #ff5500;
+
+$font-base: 'Inter', sans-serif;
+$font-accent: 'Kumbh Sans', sans-serif;
+
+$border: #{rem(1)} solid $dark-15;
+
+$laptop: 1440.98;
+$tablet: 1023.98;
+$mobile: 767.98;
+$mobile-s: 480.98;
+
+$gradient: linear-gradient(45deg, $dark-15 64%, $yellow 136%);
+
+$container-width: #{rem(1600)};
+$container-padding-x: #{rem(16)};
+
+$transition-duration: 0.2s;
+
+@function fluid($max: 48, $min: 16) {
+    $maxViewportWidth: 1920;
+    $minViewportWidth: 390;
+
+    $maxSize: math.div($max, 16);
+    $minSize: math.div($min, 16);
+    $maxWidth: math.div($maxViewportWidth, 16);
+    $minWidth: math.div($minViewportWidth, 16);
+
+    $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
+    $yAxisIntersection: -$minWidth * $slope + $minSize;
+
+    @return clamp(
+        #{$minSize * 1rem},
+        #{$yAxisIntersection * 1rem} + #{$slope * 100vw},
+        #{$maxSize * 1rem}
+    );
+}
+
+@mixin fluid-text($max: 48, $min: 16) {
+    font-size: fluid($max, $min);
+}
+
+@mixin hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+@mixin show {
+    opacity: 1;
+    visibility: visible;
+}
+
+@mixin fluid-text($max: 48, $min: 16) {
+    font-size: clamp(#{$min}px, #{calc($max / 1440 * 100)}vw, #{$max}px);
+}
+
+@mixin reset-link {
+    color: inherit;
+
+    &,
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+@mixin flex-center($isInline: false) {
+    @if ($isInline) {
+        display: inline-flex;
+    } @else {
+        display: flex;
+    }
+
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin abs-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+
+@mixin abs-x {
+    position: absolute;
+    left: 50%;
+    translate: -50%;
+}
+
+@mixin abs-y {
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+}
+
+@mixin square($size) {
+    width: $size;
+    height: $size;
+}
+
+@mixin visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    border: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+    clip-path: inset(100%) !important;
+    clip: rect(0 0 0 0) !important;
+    overflow: hidden !important;
+}
+
+@mixin laptop-above() {
+    @media (width > rem($laptop)) {
+        @content;
+    }
+}
+
+@mixin laptop() {
+    @media (width <= rem($laptop)) {
+        @content;
+    }
+}
+
+@mixin tablet-above() {
+    @media (width > rem($tablet)) {
+        @content;
+    }
+}
+
+@mixin tablet() {
+    @media (width <= rem($tablet)) {
+        @content;
+    }
+}
+
+@mixin mobile-above() {
+    @media (width > rem($mobile)) {
+        @content;
+    }
+}
+
+@mixin mobile() {
+    @media (width <= rem($mobile)) {
+        @content;
+    }
+}
+
+@mixin mobile-s-above() {
+    @media (width > rem($mobile-s)) {
+        @content;
+    }
+}
+
+@mixin mobile-s() {
+    @media (width <= rem($mobile-s)) {
+        @content;
+    }
+}
+
+@mixin hover($hasActiveEffectOnMobile: true) {
+    @media (hover: hover) {
+        &:hover {
+            @content;
+        }
+    }
+
+    @if ($hasActiveEffectOnMobile) {
+        @media (hover: none) {
+            &:active {
+                @content;
+            }
+        }
+    }
+}
+
+@mixin full-vw-centered-line(
+    $property: top,
+    $left: 50%,
+    $right: auto,
+    $translate: -50%
+) {
+    position: relative;
+
+    &::before {
+        content: '';
+
+        position: relative;
+        left: $left;
+        right: $right;
+        #{$property}: 0;
+        translate: $translate;
+
+        width: 100vw;
+        height: rem(1);
+        background-color: $dark-15;
+    }
+}
+
+@include laptop {
+    $container-width: #{rem(1280)};
+}

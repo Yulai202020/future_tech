@@ -1,0 +1,55 @@
+@use './vars.scss' as *;
+
+.blog-card {
+    display: grid;
+    grid-template-columns: 24% 1fr auto;
+    column-gap: fluid(50, 28);
+    padding-block: fluid(80, 40);
+
+    .blog-card-author {
+        @include tablet {
+            grid-area: author;
+        }
+    }
+
+    .blog-card-body {
+        display: grid;
+        row-gap: fluid(30, 20);
+
+        .blog-card-date {
+            color: $grey-60;
+        }
+
+        .blog-card-info {
+            display: grid;
+            row-gap: fluid(10, 4);
+
+            .blog-card-title {
+            }
+
+            .blog-card-description {
+            }
+        }
+
+        .blog-card-actions {
+        }
+
+        @include tablet {
+            grid-area: body;
+        }
+    }
+
+    .blog-card-link {
+        align-self: center;
+
+        @include tablet {
+            grid-area: link;
+        }
+    }
+
+    @include tablet {
+        grid-template-columns: 1fr auto;
+        grid-template-areas: 'author link' 'body body';
+        row-gap: rem(30);
+    }
+}

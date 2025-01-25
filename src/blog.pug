@@ -1,0 +1,164 @@
+doctype html
+html(lang='en')
+    head
+        title Future Tech | Blog
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="style.scss")
+        script(src="scripts/main.js", type="module")
+    body
+        header.header(header)
+            div.header-promo
+                div.header-promo-inner.container
+                    a.header-promo-link(href="/")
+                        span.icon.icon-yellow-arrow Subscribe to our Newsletter For New & latest Blogs and Resources
+            div.header-body
+                div.header-body-inner.container
+                    a.header-logo.logo(href="/", title="Home", aria-label="Home")
+                        img.logo-image(src="./images/logo.svg", alt="", width="179", height="50")
+                    div.header-overlay(header-overlay)
+                        nav.header-menu
+                            ul.header-menu-list
+                                li.header-menu-item
+                                    a.header-menu-link(href="./index.pug") Home
+                                li.header-menu-item
+                                    a.header-menu-link(href="./news.pug") News
+                                li.header-menu-item
+                                    a.header-menu-link.is-active(href="./podcasts.pug") Podcasts
+                                li.header-menu-item
+                                    a.header-menu-link(href="./resources.pug") Resources
+                        a.header-contact-us-link.button.button-yellow.hidden-mobile(href="/") Contact Us
+                    button.header-burger-button.burger-button.visible-mobile(type="button", aria-label="Open menu", title="Open menu", header-burger-button)
+                        span.burger-button-line
+                        span.burger-button-line
+                        span.burger-button-line
+        main.content
+            section.blog-details
+                header.blog-details-banner
+                    div.blog-details-banner-inner.container
+                        h1.blog-details-title(id="blog-details-title") The Rise of Artificial Intelligence in Healthcare
+                div.blog-details-body
+                    div.blog-details-body-inner.container
+                        div.blog-details-content
+                            div.blog-details-intro
+                                h2.h6 
+                                p
+                            div.blog-details-main
+                                h2.h4
+                                p
+                                h2.h4
+                                p
+                                button.blog-details-read-full-button.button(type="button")
+                                    span.icon.icon-gray-arrow-down Read Full Blog
+                        div.blog-details-info
+                            div.blog-details-actions.blog-actions
+                                ul.blog-actions-list
+                                    li.blog-actions-item
+                                        button.blog-actions-button.is-active(type="button", aria-label="dislike", title="dislike")
+                                            span.blog-actions-icon-wrapper
+                                                include images/icons/like.svg
+                                            span 32k
+                                    li.blog-actions-item
+                                        button.blog-actions-button(type="button", aria-label="discuss", title="dislike")
+                                            span.blog-actions-icon-wrapper
+                                                include images/icons/discuss.svg
+                                            span 72
+                                    li.blog-actions-item
+                                        button.blog-actions-button(type="button", aria-label="share", title="dislike")
+                                            span.blog-actions-icon-wrapper
+                                                include images/icons/share.svg
+                                            span 18
+                            div.blog-details-summary.summary.cols-2
+                                dl.summary-list
+                                    div.summary-item
+                                        dt.summary-key Publication Date
+                                        dd.summary-value
+                                            time(datetime="2023-10-15") October 15, 2023
+                                    div.summary-item
+                                        dt.summary-key Category
+                                        dd.summary-value Healthcare
+                                    div.summary-item
+                                        dt.summary-key Reading Time
+                                        dd.summary-value 10 Min
+                                    div.summary-item
+                                        dt.summary-key Author Name
+                                        dd.summary-value Dr. Emily Walker
+                                    div.summary-item
+                                        dt.summary-key Table of Contents
+                                        dd.summary-value Jane Smith
+                div.blog-details-news.news.container
+                    header.news-header
+                        h2.news-title.h4 Similar News
+                        a.news-link.button(href="/") 
+                            span.icon.icon-yellow-arrow View All News
+                    ul.news-list
+                        li.news-item
+                            acticle.news-card.container
+                                img.news-card-image(src="./images/news/2.jpg", alt="", width="512", height="222")
+                                div.news-card-body
+                                    h2.news-card-title.h6 A Decisive Victory for Progressive Policies
+                                    div.news-card-desciption
+                                        p Politics
+                                div.news-card-controls
+                                    div.news-card-actions.blog-actions
+                                        ul.blog-actions-list
+                                            li.blog-actions-item
+                                                button.blog-actions-button(type="button", aria-label="like", title="like")
+                                                    span.blog-actions-icon-wrapper
+                                                        include images/icons/like.svg
+                                                    span 2.2k
+                                            li.blog-actions-item
+                                                button.blog-actions-button(type="button", aria-label="share", title="dislike")
+                                                    span.blog-actions-icon-wrapper
+                                                        include images/icons/share.svg
+                                                    span 60
+                                    a.new-card-link.button(href="/")
+                                        span.icon.icon-yellow-arrow Read More
+                        li.news-item
+                            acticle.news-card.container
+                                img.news-card-image(src="./images/news/3.jpg", alt="", width="512", height="222")
+                                div.news-card-body
+                                    h2.news-card-title.h6 Tech Giants Unveil Cutting-Edge AI Innovations
+                                    div.news-card-desciption
+                                        p Technology
+                                div.news-card-controls
+                                    div.news-card-actions.blog-actions
+                                        ul.blog-actions-list
+                                            li.blog-actions-item
+                                                button.blog-actions-button(type="button", aria-label="like", title="like")
+                                                    span.blog-actions-icon-wrapper
+                                                        include images/icons/like.svg
+                                                    span 6k
+                                            li.blog-actions-item
+                                                button.blog-actions-button(type="button", aria-label="share", title="dislike")
+                                                    span.blog-actions-icon-wrapper
+                                                        include images/icons/share.svg
+                                                    span 92
+                                    a.new-card-link.button(href="/")
+                                        span.icon.icon-yellow-arrow Read More
+                        li.news-item
+                            acticle.news-card.container
+                                img.news-card-image(src="./images/news/4.jpg", alt="", width="512", height="222")
+                                div.news-card-body
+                                    h2.news-card-title.h6 COVID-19 Variants
+                                    div.news-card-desciption
+                                        p Health
+                                div.news-card-controls
+                                    div.news-card-actions.blog-actions
+                                        ul.blog-actions-list
+                                            li.blog-actions-item
+                                                button.blog-actions-button(type="button", aria-label="like", title="like")
+                                                    span.blog-actions-icon-wrapper
+                                                        include images/icons/like.svg
+                                                    span 10k
+                                            li.blog-actions-item
+                                                button.blog-actions-button(type="button", aria-label="share", title="dislike")
+                                                    span.blog-actions-icon-wrapper
+                                                        include images/icons/share.svg
+                                                    span 124
+                                    a.new-card-link.button(href="/")
+                                        span.icon.icon-yellow-arrow Read More
+
+            include includes/index/about.pug
+
+        include includes/index/footer.pug

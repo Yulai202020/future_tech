@@ -1,0 +1,25 @@
+header.header(header)
+    div.header-promo
+        div.header-promo-inner.container
+            a.header-promo-link(href="/")
+                span.icon.icon-yellow-arrow Subscribe to our Newsletter For New & latest Blogs and Resources
+    div.header-body
+        div.header-body-inner.container
+            a.header-logo.logo(href="/", title="Home", aria-label="Home")
+                img.logo-image(src="./images/logo.svg", alt="", width="179", height="50")
+            div.header-overlay(header-overlay)
+                nav.header-menu
+                    ul.header-menu-list
+                        li.header-menu-item
+                            a.header-menu-link.is-active(href="./index.pug") Home
+                        li.header-menu-item
+                            a.header-menu-link(href="./news.pug") News
+                        li.header-menu-item
+                            a.header-menu-link(href="./podcasts.pug") Podcasts
+                        li.header-menu-item
+                            a.header-menu-link(href="./resources.pug") Resources
+                a.header-contact-us-link.button.button-yellow.hidden-mobile(href="./contact-us.pug") Contact Us
+            button.header-burger-button.burger-button.visible-mobile(type="button", aria-label="Open menu", title="Open menu", header-burger-button)
+                span.burger-button-line
+                span.burger-button-line
+                span.burger-button-line

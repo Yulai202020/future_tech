@@ -1,0 +1,46 @@
+@use './vars.scss' as *;
+
+.hero-alt {
+    .hero-alt-header {
+        padding-top: fluid(130, 40);
+        padding-bottom: fluid(150, 40);
+        border-bottom: $border;
+
+        .hero-alt-header-inner {
+            display: grid;
+            align-items: center;
+            gap: rem(20) rem(80);
+
+            .hero-alt-title {
+                grid-column: -1/1;
+
+                .hero-alt-title-hidden-part {
+                    @include mobile-above {
+                        @include visually-hidden;
+                    }
+                }
+            }
+
+            .hero-alt-subtitle {
+            }
+
+            .hero-alt-desciption {
+            }
+
+            @include laptop {
+                row-gap: rem(60);
+            }
+
+            @include mobile-above {
+                grid-template-columns: auto 1fr;
+            }
+
+            @include mobile {
+                row-gap: rem(14);
+            }
+        }
+    }
+
+    .hero-alt-body {
+    }
+}

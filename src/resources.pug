@@ -1,0 +1,173 @@
+doctype html
+html(lang='en')
+    head
+        title Future Tech | Recources
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="style.scss")
+        script(src="scripts/main.js", type="module")
+    body
+        header.header(header)
+            div.header-promo
+                div.header-promo-inner.container
+                    a.header-promo-link(href="/")
+                        span.icon.icon-yellow-arrow Subscribe to our Newsletter For New & latest Blogs and Resources
+            div.header-body
+                div.header-body-inner.container
+                    a.header-logo.logo(href="/", title="Home", aria-label="Home")
+                        img.logo-image(src="./images/logo.svg", alt="", width="179", height="50")
+                    div.header-overlay(header-overlay)
+                        nav.header-menu
+                            ul.header-menu-list
+                                li.header-menu-item
+                                    a.header-menu-link(href="./index.pug") Home
+                                li.header-menu-item
+                                    a.header-menu-link(href="./news.pug") News
+                                li.header-menu-item
+                                    a.header-menu-link(href="./podcasts.pug") Podcasts
+                                li.header-menu-item
+                                    a.header-menu-link.is-active(href="./resources.pug") Resources
+                        a.header-contact-us-link.button.button-yellow.hidden-mobile(href="/") Contact Us
+                    button.header-burger-button.burger-button.visible-mobile(type="button", aria-label="Open menu", title="Open menu", header-burger-button)
+                        span.burger-button-line
+                        span.burger-button-line
+                        span.burger-button-line
+
+        main.content
+            section.hero-alt(aria-labelledby="resources-title")
+                div.hero-alt-header
+                    div.hero-alt-header-inner.container
+                        h1.hero-alt-title(id="resources-title")
+                            | Unlock a World of 
+                            span.hero-alt-title-hidden-part Knowledge
+                        p.hero-alt-subtitle.h1.hidden-mobile(aria-hidden="true") Knowledge
+                        p.hero-alt-desciption Dive deep into the AI universe with our collection of insightful podcasts. Explore the latest trends, breakthroughs, and discussions on artificial intelligence. Whether you're an enthusiast or a professional, our AI podcasts offer a gateway to knowledge and innovation.
+                div.hero-alt-body
+                    div.metrics.cols-4.container
+                        dl.metrics-list
+                            div.merrics-item
+                                dt.metrics_key Resources available
+                                dd.metrics_value.h2
+                                    | 300
+                                    span.metrics-sign +
+                            div.merrics-item
+                                dt.metrics_key Total Downloads
+                                dd.metrics_value.h2
+                                    | 12k
+                                    span.metrics-sign +
+                            div.merrics-item
+                                dt.metrics_key Active Users
+                                dd.metrics_value.h2
+                                    | 10k
+                                    span.metrics-sign +
+                            div.merrics-item
+                                dt.metrics_key Countries Accesses Our Content
+                                dd.metrics_value.h2
+                                    | 100
+                                    span.metrics-sign +
+section.section.tabs(aria-labelledby="reports-title", tabs)
+    header.section-header
+        div.section-header-inner.container
+            div.section-header-info
+                p.section-subtitle.tag Dive into the Details
+                h2.section-title(id="reports-title") In-Depth Reports and Analysis
+            div.section_actions
+                div.tabs-buttons.compact(role="tablist", aria-labelledby="reports-title")
+                    button.tabs-button(id="tab-1", type="button", role="tab", aria-selected="true", tabs-button) Whitepapers
+                    button.tabs-button(id="tab-1", type="button", role="tab", aria-selected="false", tabindex="-1", tabs-button) Ebooks
+                    button.tabs-button(id="tab-1", type="button", role="tab", aria-selected="false", tabindex="-1", tabs-button) Reports
+    div.section-body
+        div.tabs-body
+            div.tabs-content.is-active(id="tabpanel-1", aria-labelledby="tab-1", tabindex="0", tabs-content)
+                ul.list
+                    li.list-item
+                        div.card.container
+                            div.card-preview
+                                div.card-preview-main
+                                    img.card-preview-icon(src="./images/reports/icon-1.svg" alt="")
+                                    div.card-preview-info
+                                        h3.card-preview-title Quantum Computing Whitepaper
+                                        div.card-preview-description
+                                            p Provides technical specifications and requirements for implementing quantum computing systems.
+                            div.card-body
+                                div.card-grid.grid-3
+                                    div.card-cell.wide
+                                        img.card-cell-image(src="./images/reports/details-1.jpg", alt="", width="917", height="332")
+                                    div.card-cell.wide
+                                        h4.card-cell-title Quantum Computing Whitepaper
+                                        p.card-cell-description Quantum Computing Whitepaper
+                                        a.card-cell-link.button.button-dark-gray(href="/" download)
+                                            span.icon.icon-yellow-arrow Download PDF Now
+                                    div.card-cell.tile
+                                        p.card-cell-title Publication Date
+                                        p.card-cell-description.h6
+                                            time(datetime="2023-07") July 2023
+                                    div.card-cell.tile
+                                        p.card-cell-title Category
+                                        p.card-cell-description.h6 Quantum Computing
+                                    div.card-cell.tile
+                                        p.card-cell-title Author
+                                        p.card-cell-description.h6 Dr. Quantum
+                    li.list-item
+                        div.card.container
+                            div.card-preview
+                                div.card-preview-main
+                                    img.card-preview-icon(src="./images/reports/icon-2.svg" alt="")
+                                    div.card-preview-info
+                                        h3.card-preview-title Space Exploration Whitepaper
+                                        div.card-preview-description
+                                            p Explores Mars colonization, asteroid resource potential, and space tourism.
+                            div.card-body
+                                div.card-grid.grid-3
+                                    div.card-cell.wide
+                                        img.card-cell-image(src="./images/reports/details-2.jpg", alt="", width="917", height="332")
+                                    div.card-cell.wide
+                                        h4.card-cell-title Space Exploration Whitepaper
+                                        p.card-cell-description An in-depth whitepaper covering the latest advancements in space exploration, including Mars missions and asteroid mining.
+                                        a.card-cell-link.button.button-dark-gray(href="/" download)
+                                            span.icon.icon-yellow-arrow Download PDF Now
+                                    div.card-cell.tile
+                                        p.card-cell-title Publication Date
+                                        p.card-cell-description.h6
+                                            time(datetime="2023-09") September 2023
+                                    div.card-cell.tile
+                                        p.card-cell-title Category
+                                        p.card-cell-description.h6 Space Exploration
+                                    div.card-cell.tile
+                                        p.card-cell-title Author
+                                        p.card-cell-description.h6 FutureTech Space Division
+                ul.bordered-grid.grid-3.container
+                    li.bordered-grid-item
+                        div.report-card
+                            img.report-card-image(src="./images/reports/card-1.jpg", alt="", height="470", width="290")
+                            div.report-card-body
+                                h3.report-card-title FutureTech Trends 2024
+                                div.report-card-description
+                                    p An ebook that predicts upcoming technology trends for the next year, including AI developments
+                            div.report-card-actions
+                                a.report-card-details-link.button(href="/") View Details
+                                a.report-card-details-link.button(href="/", download) Download PDF Now
+                    li.bordered-grid-item
+                        div.report-card
+                            img.report-card-image(src="./images/reports/card-2.jpg", alt="", height="470", width="290")
+                            div.report-card-body
+                                h3.report-card-title Space Exploration Ebook
+                                div.report-card-description
+                                    p An ebook that predicts upcoming technology trends for the next year, including AI developments
+                            div.report-card-actions
+                                a.report-card-details-link.button(href="/") View Details
+                                a.report-card-details-link.button(href="/", download) Download PDF Now
+                    li.bordered-grid-item
+                        div.report-card
+                            img.report-card-image(src="./images/reports/card-3.jpg", alt="", height="470", width="290")
+                            div.report-card-body
+                                h3.report-card-title Quantum Computing Whitepaper
+                                div.report-card-description
+                                    p An in-depth whitepaper exploring the principles, applications.
+                            div.report-card-actions
+                                a.report-card-details-link.button(href="/") View Details
+                                a.report-card-details-link.button(href="/", download) Download PDF Now
+
+            include includes/index/about.pug
+
+        include includes/index/footer.pug

@@ -1,0 +1,159 @@
+doctype html
+html(lang='en')
+    head
+        title Future Tech | Podcasts
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="style.scss")
+        script(src="scripts/main.js", type="module")
+    body
+        header.header(header)
+            div.header-promo
+                div.header-promo-inner.container
+                    a.header-promo-link(href="/")
+                        span.icon.icon-yellow-arrow Subscribe to our Newsletter For New & latest Blogs and Resources
+            div.header-body
+                div.header-body-inner.container
+                    a.header-logo.logo(href="/", title="Home", aria-label="Home")
+                        img.logo-image(src="./images/logo.svg", alt="", width="179", height="50")
+                    div.header-overlay(header-overlay)
+                        nav.header-menu
+                            ul.header-menu-list
+                                li.header-menu-item
+                                    a.header-menu-link(href="./index.pug") Home
+                                li.header-menu-item
+                                    a.header-menu-link(href="./news.pug") News
+                                li.header-menu-item
+                                    a.header-menu-link.is-active(href="./podcasts.pug") Podcasts
+                                li.header-menu-item
+                                    a.header-menu-link(href="./resources.pug") Resources
+                        a.header-contact-us-link.button.button-yellow.hidden-mobile(href="/") Contact Us
+                    button.header-burger-button.burger-button.visible-mobile(type="button", aria-label="Open menu", title="Open menu", header-burger-button)
+                        span.burger-button-line
+                        span.burger-button-line
+                        span.burger-button-line
+        main.content
+            section.hero-alt(aria-labelledby="news-title")
+                div.hero-alt-header
+                    div.hero-alt-header-inner.container
+                        h1.hero-alt-title(id="news-title")
+                            | Unlock the World of Artificial Intelligence
+                            span.hero-alt-title-hidden-part through Podcasts
+                        p.hero-alt-subtitle.h1.hidden-mobile(aria-hidden="true") through Podcasts
+                        p.hero-alt-desciption Dive deep into the AI universe with our collection of insightful podcasts. Explore the latest trends, breakthroughs, and discussions on artificial intelligence. Whether you're an enthusiast or a professional, our AI podcasts offer a gateway to knowledge and innovation.
+                div.hero-alt-body
+                    ul.list
+                        li.list-item
+                            div.card.container
+                                div.card-preview
+                                    div.card-preview-main
+                                        img.card-preview-icon(src="./images/podcasts/icon-1.svg" alt="")
+                                        div.card-preview-info
+                                            h2.card-preview-title.h3 AI Revolution
+                                            div.card-rating-view.rating-view(aria-label="Rating 5 Stars", title="Rating 5 Stars")
+                                                div.rating-view-star.is-active
+                                                div.rating-view-star.is-active
+                                                div.rating-view-star.is-active
+                                                div.rating-view-star.is-active
+                                                div.rating-view-star.is-active
+                                    div.card-preview-extra
+                                        div.card-cell.tile
+                                            h3.card-cell-subtitle Host
+                                            p.card-cell-description.h6 Dr. Sarah Mitchell
+                                            a.card-cell-link.button(href="/")
+                                                span.icon.icon-yellow-arrow Listen Podcast
+                                div.card-body
+                                    div.card-grid.grid-3
+                                        div.card-cell.wide
+                                            div.video-player(video-player)
+                                                video.video-player-video(src="./videos/1.webm", width="917", height="412", poster="./images/videos/poster-1.jpg", video-player-video)
+                                                div.video-player-pannel.center.is-active(video-player-panel)
+                                                    button.video-player-play-button(type="button", aria-label="Play video", title="Play video", video-player-play-button)
+                                                        include images/icons/play-button.svg
+                                        div.card-cell.wide
+                                            h3.card-cell-title.h4 Delves into the transformative impact of AI
+                                        div.card-cell.tile
+                                        div.card-cell.tile
+                                        div.card-cell.tile
+            section.section(aria-labelledby="reviews-title")
+                header.section-header
+                    div.section-header-inner.container
+                        div.section-header-info
+                            p.section-subtitle.tag Stay Informed with Fresh Content
+                            h2.section-title(id="reviews-title") Latest Podcast Episodes
+                div.section-body
+                    ul.bordered-grid.grid-3.container
+                        li.bordered-grid-item
+                            div.video-card
+                                div.video-card-player.video-player(video-player)
+                                    video.video-player-video.small(src="./videos/1.webm", width="470", height="390", poster="./images/videos/poster-1.jpg", video-player-video)
+                                    div.video-player-pannel.is-active(video-player-panel)
+                                        button.video-player-play-button(type="button", aria-label="Play video", title="Play video", video-player-play-button)
+                                            include images/icons/play-button.svg
+                                        div.video-player-duration 2.30min
+                                div.video-card-body
+                                    h3.video-card-title.h5 Mars Exploration: Unveiling Alien Landscapes
+                                    div.video-card-description
+                                        p Embark on a journey through the Red Planet's breathtaking landscapes and uncover the mysteries of Mars.
+                        li.bordered-grid-item
+                            div.video-card
+                                div.video-card-player.video-player(video-player)
+                                    video.video-player-video.small(src="./videos/1.webm", width="470", height="390", poster="./images/videos/poster-1.jpg", video-player-video)
+                                    div.video-player-pannel.is-active(video-player-panel)
+                                        button.video-player-play-button(type="button", aria-label="Play video", title="Play video", video-player-play-button)
+                                            include images/icons/play-button.svg
+                                        div.video-player-duration 2.30min
+                                div.video-card-body
+                                    h3.video-card-title.h5 Mars Exploration: Unveiling Alien Landscapes
+                                    div.video-card-description
+                                        p Embark on a journey through the Red Planet's breathtaking landscapes and uncover the mysteries of Mars.
+                        li.bordered-grid-item
+                            div.video-card
+                                div.video-card-player.video-player(video-player)
+                                    video.video-player-video.small(src="./videos/1.webm", width="470", height="390", poster="./images/videos/poster-1.jpg", video-player-video)
+                                    div.video-player-pannel.is-active(video-player-panel)
+                                        button.video-player-play-button(type="button", aria-label="Play video", title="Play video", video-player-play-button)
+                                            include images/icons/play-button.svg
+                                        div.video-player-duration 2.30min
+                                div.video-card-body
+                                    h3.video-card-title.h5 Mars Exploration: Unveiling Alien Landscapes
+                                    div.video-card-description
+                                        p Embark on a journey through the Red Planet's breathtaking landscapes and uncover the mysteries of Mars.
+                        li.bordered-grid-item
+                            div.video-card
+                                div.video-card-player.video-player(video-player)
+                                    video.video-player-video.small(src="./videos/1.webm", width="470", height="390", poster="./images/videos/poster-1.jpg", video-player-video)
+                                    div.video-player-pannel.is-active(video-player-panel)
+                                        button.video-player-play-button(type="button", aria-label="Play video", title="Play video", video-player-play-button)
+                                            include images/icons/play-button.svg
+                                        div.video-player-duration 2.30min
+                                div.video-card-body
+                                    h3.video-card-title.h5 Mars Exploration: Unveiling Alien Landscapes
+                                    div.video-card-description
+                                        p Embark on a journey through the Red Planet's breathtaking landscapes and uncover the mysteries of Mars.
+                        li.bordered-grid-item
+                            div.video-card
+                                div.video-card-player.video-player(video-player)
+                                    video.video-player-video.small(src="./videos/1.webm", width="470", height="390", poster="./images/videos/poster-1.jpg", video-player-video)
+                                    div.video-player-pannel.is-active(video-player-panel)
+                                        button.video-player-play-button(type="button", aria-label="Play video", title="Play video", video-player-play-button)
+                                            include images/icons/play-button.svg
+                                        div.video-player-duration 2.30min
+                                div.video-card-body
+                                    h3.video-card-title.h5 Mars Exploration: Unveiling Alien Landscapes
+                                    div.video-card-description
+                                        p Embark on a journey through the Red Planet's breathtaking landscapes and uncover the mysteries of Mars.
+                        li.bordered-grid-item
+                            div.video-card
+                                div.video-card-player.video-player(video-player)
+                                    video.video-player-video.small(src="./videos/1.webm", width="470", height="390", poster="./images/videos/poster-1.jpg", video-player-video)
+                                    div.video-player-pannel.is-active(video-player-panel)
+                                        button.video-player-play-button(type="button", aria-label="Play video", title="Play video", video-player-play-button)
+                                            include images/icons/play-button.svg
+                                        div.video-player-duration 2.30min
+                                div.video-card-body
+                                    h3.video-card-title.h5 Mars Exploration: Unveiling Alien Landscapes
+                                    div.video-card-description
+                                        p Embark on a journey through the Red Planet's breathtaking landscapes and uncover the mysteries of Mars.
+            include includes/index/about.pug
+        include includes/index/footer.pug
