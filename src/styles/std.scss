@@ -450,46 +450,6 @@
     .tabs-header {
         border-bottom: $border;
 
-        .tabs-buttons {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            column-gap: rem(20);
-            padding-block: fluid(50, 20);
-
-            .tabs-button {
-                @include hover {
-                    color: $yellow;
-                    border-color: $yellow;
-                }
-
-                padding: fluid(30, 18) rem(11);
-                border: $border;
-                border-radius: rem(8);
-                font-size: rem(18);
-                background-color: transparent;
-                color: $grey-50;
-
-                &.is-active {
-                    color: $white;
-                    background-color: $dark-10;
-                    font-weight: 500;
-                    pointer-events: none;
-                }
-
-                @include laptop {
-                    font-size: rem(14);
-                }
-            }
-
-            @include laptop {
-                column-gap: rem(14);
-            }
-
-            @include tablet {
-                width: max-content;
-            }
-        }
-
         @include tablet {
             overflow-x: scroll;
         }
@@ -503,6 +463,66 @@
         &:focus-visible {
             outline-offset: -1rem;
         }
+    }
+}
+
+.tabs-buttons {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: rem(20);
+    padding-block: fluid(50, 20);
+
+    .tabs-button {
+        @include hover {
+            color: $yellow;
+            border-color: $yellow;
+        }
+
+        padding: fluid(30, 18) rem(11);
+        border: $border;
+        border-radius: rem(8);
+        font-size: rem(18);
+        background-color: transparent;
+        color: $grey-50;
+
+        &.is-active {
+            color: $white;
+            background-color: $dark-10;
+            font-weight: 500;
+            pointer-events: none;
+        }
+
+        @include laptop {
+            font-size: rem(14);
+        }
+    }
+
+    &.compact {
+        display: inline-flex;
+        column-gap: rem(10);
+        padding: rem(10);
+        background-color: $black;
+        border-radius: rem(10);
+
+        .tabs-button {
+            padding-block: rem(18);
+
+            &.is-active {
+                background-color: $dark-15;
+            }
+
+            @include laptop {
+                padding-block: rem(14);
+            }
+        }
+    }
+
+    @include laptop {
+        column-gap: rem(14);
+    }
+
+    @include tablet {
+        width: max-content;
     }
 }
 
@@ -992,5 +1012,58 @@
 
     @include laptop {
         border-radius: rem(10);
+    }
+}
+
+.report-card {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(30, 20);
+    height: 100%;
+
+    .report-card-image {
+        width: 100%;
+        height: rem(290);
+        object-fit: cover;
+        border-radius: rem(12);
+
+        @include mobile {
+            height: rem(223);
+        }
+    }
+
+    .report-card-body {
+        flex-grow: 1;
+
+        display: flex;
+        flex-direction: column;
+
+        row-gap: rem(14);
+
+        .report-card-title {
+        }
+
+        .report-card-description {
+        }
+
+        @include laptop {
+            row-gap: rem(10);
+        }
+    }
+
+    .report-card-actions {
+        display: grid;
+        column-gap: rem(20);
+
+        .report-card-details-link {
+        }
+
+        @include laptop {
+            column-gap: rem(10);
+        }
+
+        @include tablet-above {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 }

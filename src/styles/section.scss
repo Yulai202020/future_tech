@@ -6,7 +6,11 @@
         background-color: $dark-10;
 
         .section-header-inner {
-            &:has(.section-link) {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+            &:has(.section-actions) {
                 display: grid;
                 align-items: center;
                 column-gap: 1rem;
@@ -39,6 +43,9 @@
                     row-gap: rem(10);
                 }
             }
+
+            .section-actions {
+            }
         }
     }
 
@@ -48,6 +55,10 @@
 }
 
 .list {
+    &:not(:last-child) {
+        border-bottom: $border;
+    }
+
     .list-item {
         &:not(:last-child) {
             border-bottom: $border;
@@ -55,7 +66,6 @@
 
         .card {
             display: grid;
-            grid-template-columns: 37.5% auto;
 
             .card-preview {
                 display: flex;
@@ -63,7 +73,6 @@
                 justify-content: center;
                 padding: rem(80);
                 padding-left: 0;
-                border-right: $border;
                 row-gap: fluid(60, 20);
 
                 .card-preview-main {
@@ -94,6 +103,10 @@
                     padding-right: 0;
                     padding-block: rem(50);
                     border-bottom: $border;
+                }
+
+                @include tablet-above {
+                    border-right: $border;
                 }
             }
 
@@ -128,8 +141,21 @@
                             }
                         }
 
+                        .card-cell-link {
+                            grid-area: link;
+                        }
+
                         &.wide {
                             grid-column: -1 / 1;
+                        }
+
+                        &:not(.tile) {
+                            @include mobile-s {
+                                grid-template: initial;
+                                .card-cell-link {
+                                    grid-area: initial;
+                                }
+                            }
                         }
 
                         &:has(> *:only-child) {
@@ -142,10 +168,6 @@
                             grid-template-areas: 'other link' 'other link';
                             column-gap: rem(20);
                             align-items: center;
-                        }
-
-                        .card-cell-link {
-                            grid-area: link;
                         }
                     }
 
@@ -190,6 +212,10 @@
                 @include tablet {
                     padding: rem(30) 0;
                 }
+            }
+
+            @include tablet-above {
+                grid-template-columns: 37.5% auto;
             }
         }
     }
