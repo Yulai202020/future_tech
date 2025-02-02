@@ -82,6 +82,10 @@
         }
     }
 
+    &.button-grey {
+        background-color: $dark-10;
+    }
+
     @include laptop {
         padding: rem(14) rem(20);
         font-size: rem(14);
@@ -223,6 +227,35 @@
 
         @include laptop {
             column-gap: rem(14);
+        }
+    }
+
+    &.cols-3 {
+        max-width: rem(308);
+        width: 100%;
+
+        .soc1als-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            row-gap: rem(10);
+
+            .soc1als-link {
+                @include flex-center;
+
+                width: 100%;
+                height: rem(60);
+                border: $border;
+                background-color: $dark-10;
+                border-radius: rem(6);
+
+                @include laptop {
+                    height: rem(48);
+                }
+            }
+
+            @include laptop {
+                column-gap: rem(10);
+            }
         }
     }
 }
@@ -1064,6 +1097,278 @@
 
         @include tablet-above {
             grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+.contacts {
+    .contacts-header {
+        border-bottom: $border;
+    }
+}
+
+.contacts-card {
+    display: grid;
+    row-gap: fluid(50, 20);
+
+    .contacts-card-title {
+    }
+
+    .contacts-card-body {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        row-gap: rem(15);
+
+        .contacts-card-link {
+        }
+
+        @include laptop {
+            row-gap: rem(10);
+        }
+
+        @include mobile {
+            padding-left: rem(50);
+        }
+    }
+}
+
+.feedback-form {
+    display: grid;
+    gap: fluid(50, 20) rem(50);
+
+    .feedback-form-cell {
+        .feedback-form-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            column-gap: 1rem;
+
+            .feedback-form-agreement {
+                .checkbox {
+                    .checkbox-input {
+                    }
+                    .checkbox-label {
+                    }
+                }
+            }
+
+            .feedback-form-submit-button {
+                min-width: rem(137);
+                @include laptop {
+                    min-width: rem(103);
+                }
+            }
+
+            @include mobile-s {
+                flex-direction: column;
+                align-items: stretch;
+                row-gap: rem(20);
+            }
+        }
+
+        &.wide {
+            grid-column: -1 / 1;
+        }
+    }
+
+    @include mobile-s-above {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: rem(16);
+    font-size: rem(18);
+    font-weight: 500;
+    color: $white;
+
+    .field-label {
+        .field-required-star {
+            color: $red;
+        }
+    }
+
+    .field-control {
+        width: 100%;
+        height: rem(67);
+        padding-inline: rem(20);
+        color: $white;
+        background-color: $dark-10;
+        border: $border;
+        border-radius: rem(8);
+
+        &::placeholder {
+            color: $dark-40;
+        }
+
+        @include hover {
+            border-color: $yellow;
+            box-shadow: 0 0 0 rem(3) #191919;
+        }
+
+        @include laptop {
+            border-radius: rem(6);
+            height: rem(53);
+            padding-inline: rem(16);
+        }
+    }
+
+    textarea.field-control {
+        resize: vertical;
+        min-height: rem(163);
+        padding-block: rem(20);
+
+        @include laptop {
+            padding-block: rem(16);
+        }
+
+        @include mobile {
+            min-height: rem(127);
+        }
+    }
+
+    @include laptop {
+        font-size: rem(16);
+        row-gap: rem(12);
+    }
+}
+
+.checkbox {
+    display: inline-flex;
+    align-items: center;
+    column-gap: rem(10);
+    color: $white;
+
+    @include hover {
+        color: $yellow;
+
+        .checkbox-input {
+            border-color: $yellow;
+        }
+    }
+
+    .checkbox-label {
+    }
+
+    .checkbox-input {
+        --size: #{rem(28)};
+
+        @include square(var(--size));
+        @include flex-center;
+
+        appearance: none;
+        border: $border;
+        border-radius: rem(4);
+        background-color: $dark-10;
+        margin: 0;
+
+        &:not(:checked) {
+            &::after {
+                @include hide;
+            }
+        }
+
+        &::after {
+            align-self: center;
+            content: '✓';
+            color: $white;
+            transition-duration: $transition-duration;
+        }
+
+        @include laptop {
+            --size: #{rem(24)};
+        }
+    }
+
+    @include laptop {
+        column-gap: rem(6);
+    }
+}
+
+.accordion-group {
+    display: grid;
+    row-gap: fluid(30, 20);
+
+    .accordion {
+        .accordion-details {
+            &[open] {
+                .accordion-summary {
+                    .accordion-title {
+                        &::before,
+                        &::after {
+                            background-color: $white;
+                        }
+
+                        &::after {
+                            rotate: 0deg;
+                        }
+                    }
+                }
+
+                & + .accordion-content {
+                    grid-template-rows: 1fr;
+                }
+            }
+
+            .accordion-summary {
+                color: $white;
+                list-style: none;
+                user-select: none;
+                transition-duration: $transition-duration;
+
+                @include hover {
+                    color: $yellow;
+                }
+
+                .accordion-title {
+                    position: relative;
+                    padding-right: rem(50);
+                    color: inherit;
+
+                    &::before,
+                    &::after {
+                        @include abs-y;
+
+                        content: '';
+                        right: 0;
+                        width: rem(16);
+                        height: rem(2);
+                        border-radius: 1rem;
+                        background-color: $yellow;
+                        transition-duration: $transition-duration;
+                    }
+
+                    &::after {
+                        rotate: 90deg;
+                    }
+                }
+
+                &::-webkit-details-marker {
+                    display: none;
+                }
+            }
+        }
+
+        .accordion-content {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition-duration: 0.3s;
+
+            .accordion-content-inner {
+                overflow: hidden;
+
+                .accordion-content-body {
+                    --offsetTop: #{fluid(24, 16)};
+
+                    margin-top: var(--offsetTop);
+                    padding-top: var(--offsetTop);
+                    border-top: $border;
+                }
+            }
         }
     }
 }

@@ -34,6 +34,165 @@ html(lang='en')
                         span.burger-button-line
 
         main.content
+            section.contacts(aria-labeledby="contacts-title")
+                header.contacts-header
+                    h1.visually-hidden(id="contacts-title") Contacts
+                    ul.bordered-grid.grid-4.container
+                        li.bordered-grid-item
+                            div.contacts-card
+                                h2.contacts-card-title.h6 General Inquiries
+                                div.contacts-card-body
+                                    a.contacts-card-link.button.button-grey(href="mail:contact@ai-podcasts.com") 
+                                        span.icon.icon-yellow-arrow contact@ai-podcasts.com
+                                    a.contacts-card-link.button.button-grey(href="tel:11234567890")
+                                        span.icon.icon-yellow-arrow +1 (123) 456-7890
+                        li.bordered-grid-item
+                            div.contacts-card
+                                h2.contacts-card-title.h6 Technical Support
+                                div.contacts-card-body
+                                    a.contacts-card-link.button.button-grey(href="mail:contact@ai-podcasts.com") 
+                                        span.icon.icon-yellow-arrow contact@ai-podcasts.com
+                                    a.contacts-card-link.button.button-grey(href="tel:11234567890") 
+                                        span.icon.icon-yellow-arrow +1 (123) 456-7890
+                        li.bordered-grid-item
+                            div.contacts-card
+                                h2.contacts-card-title.h6 Our Office
+                                div.contacts-card-body
+                                    p Address: 123 AI Tech Avenue, Techville, 54321
+                                    a.contacts-card-link.button.button-grey
+                                        span.icon.icon-yellow-arrow Get Directions
+                        li.bordered-grid-item
+                            div.contacts-card
+                                h2.contacts-card-title.h6 Connect with Us
+                                div.contacts-card-body
+                                    div.soc1als.cols-3
+                                        ul.soc1als-list
+                                            li.soc1als-item
+                                                a.contacts-card-link.button.button-grey
+                                                    include /images/icons/twitter.svg
+                                            li.soc1als-item
+                                                a.contacts-card-link.button.button-grey
+                                                    include /images/icons/medium.svg
+                                            li.soc1als-item
+                                                a.contacts-card-link.button.button-grey
+                                                    include /images/icons/linkedin.svg
+                div.contacts-body
+                    div.list
+                        div.list-item
+                            div.card.container
+                                div.card-preview
+                                    div.card-preview-main
+                                        img.card-preview-icon(src="./images/contacts/icon-1.svg" alt="")
+                                        div.card-preview-info
+                                            h3.card-preview-title Get in Touch with AI Podcasts
+                                div.card-body
+                                    form.feedback-form(action="/")
+                                        div.feedback-form-cell.field
+                                            label.field-label(for="firstName")
+                                                | First Name
+                                                span.field-required-star(aria-hidden="true") *
+                                            input.field-control(type="text", id="firstName", placeholder="Enter First Name", required)
+                                        div.feedback-form-cell.field
+                                            label.field-label(for="firstName")
+                                                | Last Name
+                                                span.field-required-star(aria-hidden="true") *
+                                            input.field-control(type="text", id="lastName", placeholder="Enter Last Name", required)
+                                        div.feedback-form-cell.field
+                                            label.field-label(for="firstName")
+                                                | Email
+                                                span.field-required-star(aria-hidden="true") *
+                                            input.field-control(type="text", id="email", placeholder="Enter your Email", required)
+                                        div.feedback-form-cell.field
+                                            label.field-label(for="phoneNumber")
+                                                | Phone Number
+                                            div.field-body
+                                                div.select.field(select)
+                                                    label.select-label(for="phoneNumberPrefix", id="phone-number-prefix-select-label") Phone number prefix
+                                                    select.select-original-control(id="phoneNumberPrefix", tabindex="-1", select-original-control)
+                                                        option(value="+7" selected) +7
+                                                        option(value="+1") +1
+                                                        option(value="+2") +2
+                                                        option(value="+3") +3
+                                                    div.select-body
+                                                        div.select-button.field-control(tabindex="0", role="combobox", aria-expanded="false", aria-haspopup="listbox", aria-controls="phone-number-prefix-select-dropdown", aria-labeledby="phone-number-prefix-select-label", select-button)
+                                                            | +7
+                                                        div.select-dropdown.is-on-the-left-side(role="listbox", id="phone-number-prefix-select-dropdown", aria-labeledby="phone-number-prefix-select-label", select-dropdown)
+                                                            div.select-option.is-selected(role="option", aria-selected="true", id="phone-number-prefix-select-option-1", select-option) +7
+                                                            div.select-option(role="option", aria-selected="false", id="phone-number-prefix-select-option-2", select-option) +1
+                                                            div.select-option(role="option", aria-selected="false", id="phone-number-prefix-select-option-3", select-option) +2
+                                                            div.select-option(role="option", aria-selected="false", id="phone-number-prefix-select-option-4", select-option) +3
+                                                input.field-control(id="phoneNumber", placeholder="(999) 999-99-99")
+                                        div.feedback-form-cell.wide.field
+                                            label.field-label(for="message")
+                                                | First Name
+                                                span.field-required-star(aria-hidden="true") *
+                                            textarea.field-control(type="text", id="message", placeholder="Hi!", required)
+                                        div.feedback-form-cell.wide
+                                            div.feedback-form-actions
+                                                div.feedback-form-agreement
+                                                    label.checkbox
+                                                        input.checkbox-input(type="checkbox", required)
+                                                        span.checkbox-label I agree with Terms of Use and Privacy Policy
+                                                button.feedback-form-submit-button.button.button-yellow(type="submit") Send
+                        div.list-item
+                            div.card.container
+                                div.card-preview
+                                    div.card-preview-main
+                                        img.card-preview-icon(src="./images/contacts/icon-2.svg" alt="")
+                                        div.card-preview-info
+                                            h3.card-preview-title Asked question
+                                            div.card-preview-description
+                                                p If the question is not available on our FAQ section, Feel free to contact us personally, we will resolve your respective doubts. 
+                                            a.card-preview-link.button(href="/")
+                                                span.icon.icon-yellow-arrow Ask Qustion
+                                div.card-body
+                                    div.accordion-group
+                                        div.accordion.tile
+                                            details.accordion-details(name="faq", open)
+                                                summary.accordion-summary
+                                                    h4.accordion-title.h6
+                                                        span(role="term", aria-details="faq-1")  What is AI?
+                                            div.accordion-content(id="faq-1", role="definition")
+                                                div.accordion-content-inner
+                                                    div.accordion-content-body
+                                                        p AI stands for Artificial Intelligence, which refers to the simulation of human intelligence in machines. It enables them to perform tasks like problem-solving, learning, and decision-making.
+                                        div.accordion.tile
+                                            details.accordion-details(name="faq")
+                                                summary.accordion-summary
+                                                    h4.accordion-title.h6
+                                                        span(role="term", aria-details="faq-2") How can I listen to your podcasts?
+                                            div.accordion-content(id="faq-2", role="definition")
+                                                div.accordion-content-inner
+                                                    div.accordion-content-body
+                                                        p
+                                        div.accordion.tile
+                                            details.accordion-details(name="faq")
+                                                summary.accordion-summary
+                                                    h4.accordion-title.h6
+                                                        span(role="term", aria-details="faq-3") Are your podcasts free to listen to?
+                                            div.accordion-content(id="faq-3", role="definition")
+                                                div.accordion-content-inner
+                                                    div.accordion-content-body
+                                                        p
+                                        div.accordion.tile
+                                            details.accordion-details(name="faq")
+                                                summary.accordion-summary
+                                                    h4.accordion-title.h6
+                                                        span(role="term", aria-details="faq-4") Can I download episodes to listen offline?
+                                            div.accordion-content(id="faq-4", role="definition")
+                                                div.accordion-content-inner
+                                                    div.accordion-content-body
+                                                        p
+                                        div.accordion.tile
+                                            details.accordion-details(name="faq")
+                                                summary.accordion-summary
+                                                    h4.accordion-title.h6
+                                                        span(role="term", aria-details="faq-5") How often do you release new episodes?
+                                            div.accordion-content(id="faq-5", role="definition")
+                                                div.accordion-content-inner
+                                                    div.accordion-content-body
+                                                        p
+
             include includes/index/about.pug
 
         include includes/index/footer.pug

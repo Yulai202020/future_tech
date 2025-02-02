@@ -1,6 +1,6 @@
 const rootSelector = '[expandable-content]';
 
-class VideoPlayer {
+class ExpandableContent {
     selectors = {
         root: rootSelector,
         button: '[expandable-content-button]',
@@ -56,7 +56,7 @@ class ExpandableContentCollection {
 
     init() {
         document.querySelectorAll(rootSelector).forEach((i) => {
-            new VideoPlayer(i);
+            new ExpandableContent(i);
         });
     }
 }
