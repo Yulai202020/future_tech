@@ -84,8 +84,10 @@
                     }
 
                     .card-preview-info {
-                        display: grid;
-                        row-gap: fluid(16, 6);
+                        display: flex;
+                        justify-content: space-between;
+                        // display: grid;
+                        // column-gap: fluid(16, 6);
 
                         .card-preview-title {
                         }

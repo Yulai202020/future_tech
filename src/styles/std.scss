@@ -104,9 +104,10 @@
 
     &::before,
     &::after {
+        content: '';
         position: absolute;
-        width: calc((100vw - $container-width) / 2);
 
+        width: calc((100vw - $container-width) / 2);
         height: rem(1);
 
         background-color: $dark-15;
@@ -831,8 +832,6 @@
     }
 }
 
-// 6:48:00
-
 .video-card {
     display: flex;
     flex-direction: column;
@@ -1108,8 +1107,9 @@
 }
 
 .contacts-card {
-    display: grid;
+    display: flex;
     row-gap: fluid(50, 20);
+    flex-direction: column;
 
     .contacts-card-title {
     }
@@ -1228,6 +1228,15 @@
 
         @include mobile {
             min-height: rem(127);
+        }
+    }
+
+    .field-body {
+        display: flex;
+        column-gap: rem(16);
+
+        @include laptop {
+            column-gap: rem(6);
         }
     }
 

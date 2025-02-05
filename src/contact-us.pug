@@ -107,7 +107,7 @@ html(lang='en')
                                                 | Phone Number
                                             div.field-body
                                                 div.select.field(select)
-                                                    label.select-label(for="phoneNumberPrefix", id="phone-number-prefix-select-label") Phone number prefix
+                                                    label.select-label.visually-hidden(for="phoneNumberPrefix", id="phone-number-prefix-select-label") Phone number prefix
                                                     select.select-original-control(id="phoneNumberPrefix", tabindex="-1", select-original-control)
                                                         option(value="+7" selected) +7
                                                         option(value="+1") +1
@@ -121,7 +121,7 @@ html(lang='en')
                                                             div.select-option(role="option", aria-selected="false", id="phone-number-prefix-select-option-2", select-option) +1
                                                             div.select-option(role="option", aria-selected="false", id="phone-number-prefix-select-option-3", select-option) +2
                                                             div.select-option(role="option", aria-selected="false", id="phone-number-prefix-select-option-4", select-option) +3
-                                                input.field-control(id="phoneNumber", placeholder="(999) 999-99-99")
+                                                input.field-control(id="phoneNumber", placeholder="(999) 999-99-99" data-js-input-mask='(000) 000-00-00')
                                         div.feedback-form-cell.wide.field
                                             label.field-label(for="message")
                                                 | First Name

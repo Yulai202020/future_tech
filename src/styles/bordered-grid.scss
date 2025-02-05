@@ -83,6 +83,12 @@
         --columns: 4;
         --itemPadddingX: #{rem(50)};
 
+        column-gap: calc(var(--itemPadddingX) * 2);
+
+        @include laptop {
+            --itemPadddingX: #{rem(30)};
+        }
+
         @include tablet-above {
             .bordered-grid-item {
                 &:nth-child(4n - 3),
@@ -94,17 +100,13 @@
                         content: '';
                         position: absolute;
                         top: 0;
-                        left: calc(100% - var(--itemPadddingX));
+                        left: calc(100% + var(--itemPadddingX));
                         width: rem(1);
                         height: 100%;
                         background-color: $dark-15;
                     }
                 }
             }
-        }
-
-        @include laptop {
-            --itemPadddingX: #{rem(30)};
         }
 
         @include tablet {

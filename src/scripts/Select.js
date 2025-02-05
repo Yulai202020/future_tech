@@ -59,6 +59,11 @@ class Select extends BaseComponent {
                 this.optionElements[this.originalControlElement.selectedIndex],
         });
 
+        this.state.selectedOptionElement = [...this.optionElements].find(
+            (optionElement) =>
+                optionElement.classList.contains(this.stateClasses.isSelected)
+        );
+
         this.fixDropdownPosition();
         this.updateTabIndexes();
         this.bindEvents();
@@ -68,7 +73,8 @@ class Select extends BaseComponent {
         const { isExpanded, currentOptionIndex, selectedOptionElement } =
             this.state;
 
-        const newSelectedOptionValue = selectedOptionElement.textContent.trim();
+        const newSelectedOptionValue =
+            selectedOptionElement?.textContent.trim();
 
         const updateOriginalControl = () => {
             this.originalControlElement.value = newSelectedOptionValue;
@@ -81,7 +87,7 @@ class Select extends BaseComponent {
                 isExpanded
             );
 
-            this.buttonElement.setAttributes(
+            this.buttonElement.setAttribute(
                 this.stateAttributes.ariaExpanded,
                 isExpanded
             );
@@ -159,6 +165,9 @@ class Select extends BaseComponent {
         );
 
         this.buttonElement.addEventListener('click', this.onButtonClick);
+        document.addEventListener('click', this.onClick);
+
+        // this.rootElement
     }
 
     onMobileMatchMediaChange = (event) => {
@@ -172,6 +181,39 @@ class Select extends BaseComponent {
     toggleExpandedState() {
         this.state.isExpanded = !this.state.isExpanded;
     }
+
+    expand() {
+        this.state.isExpanded = true;
+    }
+
+    collapse() {
+        this.state.isExpanded = false;
+    }
+
+    onClick = (event) => {
+        const { target } = event;
+
+        const isOutsideDropdownClick =
+            target.closest(this.selectors.dropdown) !== this.dropdownElement;
+
+        const isButtonClick = target === this.buttonElement;
+
+        if (isOutsideDropdownClick && !isButtonClick) {
+            this.collapse();
+            return;
+        }
+
+        const isOptionClick = target.matches(this.selectors.option);
+
+        if (isOptionClick) {
+            this.state.selectedOptionElement = target;
+            this.state.currentOptionIndex = [...this.optionElements].findIndex(
+                (optionElement) => optionElement === target
+            );
+
+            this.collapse();
+        }
+    };
 }
 
 class SelectCollection {
