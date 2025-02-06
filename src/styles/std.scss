@@ -53,6 +53,12 @@
             background-image: url('./images/icons/eye_yellow.svg');
         }
     }
+
+    &.icon-gray-arrow-down {
+        &::after {
+            background-image: url('./images/icons/arrow-down_gray.svg');
+        }
+    }
 }
 
 .logo {
@@ -455,7 +461,7 @@
 }
 
 .tile {
-    padding: fluid(40, 24);
+    padding: fluid(30, 20);
     background-color: $dark-10;
     border-radius: rem(12);
     border: $border;
@@ -930,7 +936,7 @@
 }
 
 .blog-details {
-    main .blog-details-banner {
+    .blog-details-banner {
         display: flex;
         align-items: end;
         min-height: fluid(598, 281);
@@ -941,7 +947,7 @@
                 rgba(20, 20, 20, 0) 0%,
                 rgba(20, 20, 20, 0) 75.52%,
                 $dark 100%
-            )
+            ),
             url('./images/blog-details/banner.jpg') center/cover no-repeat;
 
         .blog-details-banner-inner {
@@ -962,10 +968,19 @@
                 border-right: $border;
 
                 .blog-details-intro {
+                    display: grid;
+                    row-gap: rem(14);
+
+                    @include laptop {
+                        row-gap: rem(6);
+                    }
                 }
 
                 .blog-details-main {
                     --initMaxHeight: #{rem(741)};
+
+                    display: grid;
+                    row-gap: fluid(24, 14);
 
                     .blog-details-read-full-button {
                     }
@@ -1037,6 +1052,30 @@
 
 .table-of-contents {
     padding: rem(20);
+    color: $white;
+    background-color: $dark-10;
+    border-radius: rem(12);
+
+    .table-of-contents-list {
+        display: grid;
+        row-gap: rem(20);
+
+        .table-of-contents-item {
+            list-style-type: disc;
+        }
+
+        @include laptop {
+            row-gap: rem(16);
+        }
+    }
+
+    @include laptop {
+        border-radius: rem(10);
+    }
+}
+
+.table-of-contents {
+    padding: rem(20);
 
     color: $white;
     background-color: $dark-10;
@@ -1085,13 +1124,13 @@
 
     .report-card-actions {
         display: grid;
-        column-gap: rem(20);
+        gap: rem(20);
 
         .report-card-details-link {
         }
 
         @include laptop {
-            column-gap: rem(10);
+            gap: rem(10);
         }
 
         @include tablet-above {

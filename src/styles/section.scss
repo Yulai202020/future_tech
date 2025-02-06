@@ -7,9 +7,9 @@
 
         .section-header-inner {
             display: flex;
-
             justify-content: space-between;
             align-items: center;
+
             &:has(.section-actions) {
                 display: grid;
                 align-items: center;
@@ -46,6 +46,13 @@
 
             .section-actions {
             }
+
+            @include mobile {
+                display: flex;
+                flex-direction: column;
+                row-gap: rem(20);
+                align-items: start;
+            }
         }
     }
 
@@ -72,7 +79,6 @@
                 flex-direction: column;
                 justify-content: center;
                 padding: rem(80);
-                padding-left: 0;
                 row-gap: fluid(60, 20);
 
                 .card-preview-main {
@@ -85,7 +91,7 @@
 
                     .card-preview-info {
                         display: grid;
-                        column-gap: fluid(16, 6);
+                        row-gap: fluid(30, 15);
 
                         &:has(.card-rating-view) {
                             display: flex;
@@ -100,20 +106,23 @@
                         .card-preview-description {
                         }
                     }
+
+                    @include mobile {
+                    }
                 }
 
                 @include laptop {
                     padding: rem(60);
                 }
 
-                @include tablet {
-                    padding-right: 0;
-                    padding-block: rem(50);
-                    border-bottom: $border;
-                }
-
                 @include tablet-above {
                     border-right: $border;
+                }
+
+                @include tablet {
+                    padding-inline: 0;
+                    padding-block: rem(50);
+                    border-bottom: $border;
                 }
             }
 

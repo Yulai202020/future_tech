@@ -1,5 +1,10 @@
+@use './vars.scss' as *;
+
 .expandable-content {
     --initMaxHeight: #{rem(500)};
+
+    display: flex;
+    flex-direction: column;
 
     position: relative;
     overflow-y: hidden;
@@ -12,7 +17,12 @@
     }
 
     &:not(&.is-expanded) {
-        max-height: var(--initMaxHeight);
+        height: var(--initMaxHeight);
+
+        .expandable-content-button {
+            @include abs-x;
+            bottom: rem(30);
+        }
     }
 
     &::before {
@@ -33,7 +43,8 @@
     }
 
     .expandable-content-button {
-        @include abs-x;
-        bottom: rem(68);
+        align-self: center;
+        justify-self: center;
+        transition-duration: 0.2s;
     }
 }

@@ -27,4 +27,9 @@
     @include laptop {
         column-gap: rem(30);
     }
+
+    @include mobile-s {
+        grid-template-columns: 1fr;
+        row-gap: rem(20);
+    }
 }

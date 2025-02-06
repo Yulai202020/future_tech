@@ -52,4 +52,8 @@
         grid-template-areas: 'author link' 'body body';
         row-gap: rem(30);
     }
+
+    @include mobile-s {
+        grid-template-areas: 'author author' 'link link' 'body body';
+    }
 }
